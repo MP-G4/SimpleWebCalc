@@ -1,4 +1,6 @@
 certifi==2021.10.8
+cffi==1.15.0
+cryptography==36.0.1
 Flask==0.10.1
 Flask-MySQLdb==0.2.0
 Flask-Script==2.0.6
@@ -9,8 +11,10 @@ itsdangerous==2.0.1
 Jinja2==3.0.3
 MarkupSafe==2.0.1
 mysqlclient==2.1.0
+pycparser==2.21
 PyMySQL==1.0.2
 SQLAlchemy==1.4.29
 Werkzeug==2.0.2
 wincertstore==0.2
 WTForms==3.0.1
+uwsgi
