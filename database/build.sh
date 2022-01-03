@@ -29,7 +29,7 @@ sudo apt install -y mysql-client
 mysql -u root -h "127.0.0.1" -P 3306 -p${db_rootpass} -e "
 CREATE DATABASE ${db_name};
 use ${db_name};
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${db_rootpass};'
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${db_rootpass}';
 CREATE TABLE cal_res (
 	id INTEGER NOT NULL AUTO_INCREMENT, 
 	num VARCHAR(45), 
