@@ -5,7 +5,7 @@
 1. 先运行以下代码
 	```bash
 	$ cd database
-	$ ./buil.sh
+	$ ./build.sh
 	```
 2. 再运行以下代码
 	```bash
