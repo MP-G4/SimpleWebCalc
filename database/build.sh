@@ -24,6 +24,7 @@ docker run \
     mariadb:latest
 
 sleep 5
+sudo apt install -y mysql-client
 #不需要建表，sqlAlchemy会自动建立
 mysql -u root -h "127.0.0.1" -P 3306 -p${db_rootpass} -e "
 CREATE DATABASE ${db_name};
