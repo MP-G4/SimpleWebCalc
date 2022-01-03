@@ -11,6 +11,8 @@
 `http://127.0.0.1:5000/calc.php`
 
 ## 运行截图
-程序运行主界面
+1.程序运行主界面
 ![image](https://user-images.githubusercontent.com/38367263/147934821-addf27e7-79f7-4eb6-a2a7-093f50b4aca0.png)
 
+2.程序实现简单的+ - * /运算,并将运算结果储存到数据库
+![image](https://user-images.githubusercontent.com/50092797/147936262-d8b943c9-d3ad-4a87-abbd-c81ee06f1306.png)
