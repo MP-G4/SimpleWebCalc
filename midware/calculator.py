@@ -49,13 +49,10 @@ def process_input():
 
     msg = request.form.get("msg")
     msg = str(msg)
-    if msg.isalpha():
-        a = "输入算式不合法"
-    else:
-        a = msg + " = " + str(eval(msg))
-        res = cal_res(num=str(eval(msg)), calc=msg)
-        db.session.add(res)
-        db.session.commit()
+    a = msg + " = " + str(eval(msg))
+    res = cal_res(num=str(eval(msg)), calc=msg)
+    db.session.add(res)
+    db.session.commit()
 
 
 def process_output():
