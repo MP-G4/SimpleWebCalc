@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 contaienr_name="midware"
 
 db_name="database"
