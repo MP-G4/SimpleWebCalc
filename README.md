@@ -16,3 +16,7 @@
 
 2.程序实现简单的+ - * /运算,并将运算结果储存到数据库
 ![image](https://user-images.githubusercontent.com/50092797/147936262-d8b943c9-d3ad-4a87-abbd-c81ee06f1306.png)
+
+3.程序对于一些非法运算,没有给出很好的提示,我们将在后续的开发中优化
+![image](https://user-images.githubusercontent.com/38367263/147937420-97cb0b20-4bbd-4e81-b108-c73f4332d621.png)
+
