@@ -64,6 +64,9 @@ def user():
     nums=cal_res.query.all()
     return render_template("echo.jinja2", bean=output,nums=nums)
 
+@app.route("/", methods=["POST", "GET"])
+def index():
+    return redirect(url_for('user'))
 
 # Run
 if __name__ == "__main__":
