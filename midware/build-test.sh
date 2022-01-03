@@ -13,7 +13,7 @@ docker run \
     -d \
     -p 5000:5000 \
     --network velcome_net \
-    --env DB_HOST=${db_host_name} \
+    --env DB_HOST=${db_name} \
     ${contaienr_name}
 
 
