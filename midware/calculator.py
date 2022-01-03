@@ -4,8 +4,8 @@ from flask import Flask, request, redirect, url_for
 from flask.templating import render_template
 from flask_sqlalchemy import SQLAlchemy
 
-a = ""
-b_host = os.environ.get('DB_HOST')
+b_host = os.environ.get("DB_HOST")
+
 
 class Config(object):
     pass
@@ -17,7 +17,9 @@ class ProdConfig(Config):
 
 class DevConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:a6569009@'+b_host+':3306/donghaoran43'
+    SQLALCHEMY_DATABASE_URI = (
+        "mysql+pymysql://root:a6569009@" + b_host + ":3306/donghaoran43"
+    )
     SQLALCHEMY_ECHO = True
 
 
@@ -29,19 +31,21 @@ db = SQLAlchemy(app)
 
 class cal_res(db.Model):
     # 定义表名
-    __tablename__ = 'cal_res'
+    __tablename__ = "cal_res"
     # 定义列对象
     id = db.Column(db.Integer, primary_key=True)
     num = db.Column(db.String(45))
-    calc=   db.Column(db.String(45))
+    calc = db.Column(db.String(45))
     # repr()方法显示一个可读字符串
     def __repr__(self):
-        return '<Role: %s %s>' % (self.num, self.id)
+        return "<Role: %s %s>" % (self.num, self.id)
+
+
+a = ""
 
 
 def process_input():
     global a
-    a = ""
 
     msg = request.form.get("msg")
     msg = str(msg)
@@ -49,9 +53,10 @@ def process_input():
         a = "输入算式不合法"
     else:
         a = msg + " = " + str(eval(msg))
-        res = cal_res(num=str(eval(msg)),calc=msg)
+        res = cal_res(num=str(eval(msg)), calc=msg)
         db.session.add(res)
         db.session.commit()
+
 
 def process_output():
     return a
@@ -61,15 +66,17 @@ def process_output():
 def user():
     process_input()
     output = process_output()
-    nums=cal_res.query.all()
-    return render_template("echo.jinja2", bean=output,nums=nums)
+    nums = cal_res.query.all()
+    return render_template("echo.jinja2", bean=output, nums=nums)
+
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    return redirect(url_for('user'))
+    return redirect(url_for("user"))
+
 
 # Run
 if __name__ == "__main__":
     db.drop_all()
     db.create_all()
-    app.run(debug=True)
+    app.run()

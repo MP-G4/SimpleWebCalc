@@ -6,7 +6,6 @@ COPY requirements.txt /midware
 COPY start.sh /midware
 COPY calculator.py /midware
 COPY uwsgi.ini /midware
-#COPY ./conf/ /midware
 COPY ./templates/ /midware/templates
 
 WORKDIR /midware
